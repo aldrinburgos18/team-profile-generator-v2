@@ -1,4 +1,3 @@
-const { expect, test } = require("@jest/globals");
 const Employee = require("../lib/Employee");
 
 test("creates an employee object", () => {
@@ -14,5 +13,13 @@ test("gets employee name", () => {
 
   expect(employee.getName()).toEqual(
     expect.stringContaining(employee.name.toString())
+  );
+});
+
+test("gets employee's id", () => {
+  const employee = new Employee("Aldrin", 1);
+
+  expect(employee.getId()).toEqual(
+    expect.stringContaining(employee.id.toString())
   );
 });
