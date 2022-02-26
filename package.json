@@ -1,0 +1,27 @@
+{
+  "name": "team-profile-generator-v2",
+  "version": "2.0.0",
+  "description": "A command-line application that takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "jest": "^27.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aldrinburgos18/team-profile-generator-v2.git"
+  },
+  "author": "Aldrin Burgos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aldrinburgos18/team-profile-generator-v2/issues"
+  },
+  "homepage": "https://github.com/aldrinburgos18/team-profile-generator-v2#readme"
+}
