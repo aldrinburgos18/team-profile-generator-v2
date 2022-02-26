@@ -27,3 +27,9 @@ test("gets engineer's github account", () => {
     expect.stringContaining("aldrinburgos18")
   );
 });
+
+test("gets engineer's role", () => {
+  const engineer = new Engineer("Aldrin");
+
+  expect(engineer.getRole()).toEqual(expect.stringContaining("Engineer"));
+});
