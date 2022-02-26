@@ -1,3 +1,4 @@
+const { test, expect } = require("@jest/globals");
 const Intern = require("../lib/Intern");
 
 test("creates an intern object", () => {
@@ -23,4 +24,10 @@ test("gets intern's school", () => {
   );
 
   expect(intern.getSchool()).toEqual(expect.stringContaining("2University"));
+});
+
+test("get intern's role", () => {
+  const intern = new Intern("Aldrin");
+
+  expect(intern.getRole()).toEqual(expect.stringContaining("Intern"));
 });
