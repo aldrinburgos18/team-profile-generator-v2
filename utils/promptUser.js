@@ -1,6 +1,10 @@
 const inquirer = require("inquirer");
 const addTeamMember = require("./addTeamMember");
-const validateText = require("./validateAnswers");
+const {
+  validateText,
+  validateNum,
+  validateEmail,
+} = require("./validateAnswers");
 
 const Manager = require("../lib/Manager");
 
@@ -17,16 +21,19 @@ function promptUser() {
         type: "input",
         name: "id",
         message: "What is your ID number?",
+        validate: (idInput) => validateNum(idInput),
       },
       {
         type: "input",
         name: "email",
         message: "What is your e-mail address?",
+        validate: (emailInput) => validateEmail(emailInput),
       },
       {
         type: "input",
         name: "officeNbr",
         message: "What is your office number?",
+        validate: (ofcInput) => validateNum(ofcInput),
       },
     ])
     .then((employeeData) => {

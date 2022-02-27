@@ -1,5 +1,10 @@
 const inquirer = require("inquirer");
 
+const {
+  validateText,
+  validateNum,
+  validateEmail,
+} = require("./validateAnswers");
 const Engineer = require("../lib/Engineer");
 const Intern = require("../lib/Intern");
 
@@ -21,6 +26,7 @@ function addTeamMember(employeeData) {
         name: "name",
         message: ({ selectEmployee }) =>
           `What is your ${selectEmployee}'s name?`,
+        validate: (nameInput) => validateText(nameInput),
         when: ({ selectEmployee }) => {
           if (selectEmployee === "Engineer" || selectEmployee === "Intern") {
             return true;
@@ -34,6 +40,7 @@ function addTeamMember(employeeData) {
         name: "id",
         message: ({ selectEmployee }) =>
           `What is your ${selectEmployee}'s ID number?`,
+        validate: (idInput) => validateNum(idInput),
         when: ({ selectEmployee }) => {
           if (selectEmployee === "Engineer" || selectEmployee === "Intern") {
             return true;
@@ -47,6 +54,7 @@ function addTeamMember(employeeData) {
         name: "email",
         message: ({ selectEmployee }) =>
           `What is your ${selectEmployee}'s e-mail address?`,
+        validate: (emailInput) => validateEmail(emailInput),
         when: ({ selectEmployee }) => {
           if (selectEmployee === "Engineer" || selectEmployee === "Intern") {
             return true;
@@ -59,6 +67,7 @@ function addTeamMember(employeeData) {
         type: "input",
         name: "github",
         message: "What is your Engineer's GitHub username?",
+        validate: (nameInput) => validateText(nameInput),
         when: ({ selectEmployee }) => {
           if (selectEmployee === "Engineer") {
             return true;
@@ -71,6 +80,7 @@ function addTeamMember(employeeData) {
         type: "input",
         name: "school",
         message: "What school does your Intern go to?",
+        validate: (nameInput) => validateText(nameInput),
         when: ({ selectEmployee }) => {
           if (selectEmployee === "Intern") {
             return true;
