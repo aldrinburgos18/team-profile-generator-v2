@@ -9,6 +9,13 @@ const {
 const Manager = require("../lib/Manager");
 
 function promptUser() {
+  console.log(
+    `
+    =========================================================================================
+    Welcome to Team Profile Generator. To get started, please answer the following questions:
+    =========================================================================================
+    `
+  );
   return inquirer
     .prompt([
       {
