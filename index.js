@@ -1,6 +1,6 @@
 const promptUser = require("./utils/promptUser");
 const generatePage = require("./src/page-template");
-const fs = require("fs");
+const writeToFile = require("./utils/writeToFile");
 
 promptUser()
   .then((data) => {
@@ -12,4 +12,4 @@ promptUser()
     var interns = employeeData.filter((employee) => employee.role == "Intern");
     return generatePage(manager, engineers, interns);
   })
-  .then((pageContent) => console.log(pageContent));
+  .then((pageContent) => writeToFile(pageContent));
