@@ -12,7 +12,6 @@ function validateNum(answer) {
     console.log(`\n Please enter a number!`);
     return false;
   } else {
-    console.log(answer);
     return true;
   }
 }
